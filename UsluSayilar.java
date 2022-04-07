@@ -1,23 +1,26 @@
-package Giris;
+package Metodlar;
 
 import java.util.Scanner;
 
 public class UsluSayilar {
+    static int power(int taban, int us){
+        if(us == 0)
+            return 1;
+
+        int sonuc = 1;
+        sonuc *= power(taban,us-1) * taban;
+        return sonuc;
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int n ,u;
-        int total = 1;
+        int taban, us;
+        System.out.print("taban: ");
+        taban= input.nextInt();
+        System.out.print("üs ");
+        us = input.nextInt();
 
-        System.out.print("Sayıyı giriniz : ");
-        n = input.nextInt();
+        System.out.println(power(taban,us));
 
-        System.out.print("Üs Olacak Sayıyı Giriniz : ");
-        u = input.nextInt();
-
-        for (int i = 1 ; i <= u  ; i++) {
-
-            total *= n ;
-
-        }  System.out.println("Cevap : " + total);
     }
 }
